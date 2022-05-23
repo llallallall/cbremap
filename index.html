@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="ThemeStarz">
+
+    <!--CSS -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/font-awesome/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/jquery.scrollbar.css">
+    <link rel="stylesheet" href="assets/css/leaflet.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="stylesheet" href="assets/css/leaflet-geoman.css" />  
+    <link rel="stylesheet" href="assets/css/L.VisualClick.css">
+    <link rel="stylesheet" href="assets/css/Control.FullScreen.css">
+    <link rel="stylesheet" href="assets/css/leaflet-ruler.css">
+
+    <link rel="stylesheet" href="assets/css/leaflet-measure-path.css">
+    <link rel="stylesheet" href="assets/css/leaflet.draw.css" />
+
+    <title>CBRE Korea</title>
+
+</head>
+
+<body>
+
+<!-- WRAPPER
+=====================================================================================================================-->
+<div class="ts-page-wrapper ts-homepage" id="page-top">
+
+    <!--*********************************************************************************************************-->
+    <!--HEADER **************************************************************************************************-->
+    <!--*********************************************************************************************************-->
+    <header id="ts-header">
+
+        <!-- SECONDARY NAVIGATION
+        =============================================================================================================-->
+        <nav id="ts-secondary-navigation" class="navbar p-0">
+            <div class="container justify-content-end justify-content-sm-between">
+
+                <!--Left Side-->
+                <div class="navbar-nav d-none d-sm-block">
+                    <!--Phone-->
+                    <span class="mr-4"><a href="#">CBRE Korea</a></span>
+                    <!-- <span style="padding-left:300px;"></span> -->
+                    <!-- <i class="fa fa-map" aria-hidden="true"></i>
+                    <span class="mr-4"><a href="javascript:layerController('2d')">2D Map</a></span>
+                    <i class="fa fa-globe" aria-hidden="true"></i>
+                    <span class="mr-4"><a href="javascript:layerController('satlite')">Satlite</a></span> -->
+
+                    
+                </div>
+
+                <!--  -->
+                <div class="navbar-nav flex-row d-sm-block" >
+                    <i class="fa fa-list-alt" aria-hidden="true"></i>
+                    <span class="mr-4"><a href="/listing-list-compact-sidebar.html">View List</a></span>
+                </div>
+
+                <!--Right Side-->
+                <div class="navbar-nav flex-row">
+                    
+                    <!--Language Select-->
+                    <select class="custom-select bg-transparent ts-text-small border-left border-right" id="language" name="language">
+                        <option value="1">EN</option>
+                        <option value="2">KR</option>
+                    </select>
+                    
+                    
+                </div>
+                <!--end navbar-nav-->
+            </div>
+            <!--end container-->
+        </nav>
+
+        <!--PRIMARY NAVIGATION
+        =============================================================================================================-->
+       
+
+    </header>
+    <!--end Header-->
+
+    <!-- HERO MAP
+    =================================================================================================================-->
+    <section id="ts-hero" class=" mb-0">
+
+        <!--Fullscreen mode-->
+        <div class="ts-full-screen ts-has-horizontal-results w-1001 d-flex1 flex-column1">
+
+            <!-- MAP
+            =========================================================================================================-->
+            <div class="ts-map ts-shadow__sm">
+
+                <!-- FORM
+                =====================================================================================================-->
+                <div class="ts-form__map-search ts-z-index__2">
+                    <!--Form-->
+                    <form class="ts-form">
+
+                        <!--Collapse button-->
+                        <a href=".ts-form-collapse" data-toggle="collapse" class="ts-center__vertical justify-content-between">
+                            <h5 class="mb-0">Search Filter</h5>
+                        </a>
+
+                        <!--Form-->
+                        <div class="ts-form-collapse ts-xs-hide-collapse collapse show">
+
+
+                            <!--Category-->
+                            <div class="form-group my-2 pt-2 d-flex justify-content-around" data-toggle="tooltip" data-placement="top" title="Toggle Properties Status">
+                                <a href="#" class="btn btn-light btn-mb">Lease</a>
+                                <a href="#" class="btn btn-light btn-mb">Sale</a>
+                            </div>
+
+                            <!--Keyword-->
+                            <div class="form-group my-2 pt-2">
+                                <input type="text" class="form-control" id="keyword" name="keyword" placeholder="keyword" data-toggle="tooltip" data-placement="top" title="Property Name, Address, Buyer, Saller">
+                            </div>
+
+                            <!--Sector-->
+                            <select class="custom-select my-2" id="type" name="category" data-toggle="tooltip" data-placement="top" title="Select Properties Sector">
+                                <option value="">All</option>
+                                <option value="1">Apartment</option>
+                                <option value="2">Office</option>
+                                <option value="3">Storage</option>
+                                
+                            </select>
+
+                            <!--Status
+                            <select class="custom-select my-2" id="status" name="status">
+                                <option value="">Status</option>
+                                <option value="1">Sale</option>
+                                <option value="2">Rent</option>
+                            </select>-->
+                            <!--Row-->
+                            <div class="form-row" data-toggle="tooltip" data-placement="top" title="Choose Transaction Years">
+
+                                <!--Start Year-->
+                                <div class="col-sm-6">
+                                    <div class="form-group text-center">
+                                        <label for="startYear">Start Year/Q</label>
+                                        <input type="number" class="form-control  text-center" id="startYear" name="startYear" min="1900" value="2016">
+                                        <input type="number" class="form-control  text-center" id="startQuarter" name="startQuarter" min="1" max="4" value="1">
+                                    </div>
+                                </div>
+
+                                <!--End Year-->
+                                <div class="col-sm-6">
+                                    <div class="form-group text-center">
+                                        <label for="endYear">End Year/Q</label>
+                                        <input type="number" class="form-control  text-center" id="endYear" name="endYear" max="2030" value="2021">
+                                        <input type="number" class="form-control  text-center" id="endQuarter" name="endQuarter" min="1" max="4" value="4">
+                                    </div>
+
+                                </div>
+
+                                
+                            </div>
+                            <!--end row-->
+                            
+
+                            <!--Submit button-->
+                            <div class="form-group mt-2 mb-3">
+                                <button type="submit" class="btn btn-primary w-100" id="search-btn">Search</button>
+                            </div>
+
+                            <!--More Options Button-->
+                            <a href="#more-options-collapse" class="collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="more-options-collapse">
+                                <i class="fa fa-plus-circle ts-text-color-primary mr-2 ts-visible-on-collapsed"></i>
+                                <i class="fa fa-minus-circle ts-text-color-primary mr-2 ts-visible-on-uncollapsed"></i>
+                                More Options
+                            </a>
+
+                            <!--Hidden Form-->
+                            <div class="collapse" id="more-options-collapse">
+
+                                <!--Padding-->
+                                <div class="pt-4">
+
+                                    
+
+
+                                    <!--Max Price-->
+                                    <select class="custom-select my-2" id="price" name="price">
+                                        <option value="">Max Price</option>
+                                        <option value="5000">₩ 5,000 M</option>
+                                        <option value="10000">₩ 10,000 M</option>
+                                        <option value="50000">₩ 50,000 M</option>
+                                        <option value="100000">₩ 100,000 M</option>
+                                        <option value="100000>">> ₩ 100,000 M</option>
+                                    </select>
+
+                                    <!--Max Price-->
+                                    <select class="custom-select my-2" id="price" name="price">
+                                        <option value="">Max Area(m<sup>2</sup>)</option>
+                                        <option value="5000">₩ 5,000 M</option>
+                                        <option value="10000">₩ 10,000 M</option>
+                                        <option value="50000">₩ 50,000 M</option>
+                                        <option value="100000">₩ 100,000 M</option>
+                                        <option value="100000>">> ₩ 100,000 M</option>
+                                    </select>
+                                    Distance
+                                    <!--Max Distance-->
+                                    <select class="custom-select my-2" id="price" name="price">
+                                        <option value="">Max Distance(CityHall)</option>
+                                        <option value="5000">₩ 5,000 M</option>
+                                        <option value="10000">₩ 10,000 M</option>
+                                        <option value="50000">₩ 50,000 M</option>
+                                        <option value="100000">₩ 100,000 M</option>
+                                        <option value="100000>">> ₩ 100,000 M</option>
+                                    </select>
+
+                                    <!--Max Distance-->
+                                    <select class="custom-select my-2" id="price" name="price">
+                                        <option value="">Max Distance(IC)</option>
+                                        <option value="5000">₩ 5,000 M</option>
+                                        <option value="10000">₩ 10,000 M</option>
+                                        <option value="50000">₩ 50,000 M</option>
+                                        <option value="100000">₩ 100,000 M</option>
+                                        <option value="100000>">> ₩ 100,000 M</option>
+                                    </select>
+Time
+                                    <!--Max Time-->
+                                    <select class="custom-select my-2" id="price" name="price">
+                                        <option value="">Max Time(CityHall)</option>
+                                        <option value="5000">₩ 5,000 M</option>
+                                        <option value="10000">₩ 10,000 M</option>
+                                        <option value="50000">₩ 50,000 M</option>
+                                        <option value="100000">₩ 100,000 M</option>
+                                        <option value="100000>">> ₩ 100,000 M</option>
+                                    </select>
+
+                                    <!--Max Time-->
+                                    <select class="custom-select my-2" id="price" name="price">
+                                        <option value="">Max Time(IC)</option>
+                                        <option value="5000">₩ 5,000 M</option>
+                                        <option value="10000">₩ 10,000 M</option>
+                                        <option value="50000">₩ 50,000 M</option>
+                                        <option value="100000">₩ 100,000 M</option>
+                                        <option value="100000>">> ₩ 100,000 M</option>
+                                    </select>
+
+                                    
+                                    <!--Checkboxes-->
+                                    <div id="features-checkboxes" class="w-100">
+                                        <h6 class="mb-3">Features</h6>
+
+                                        <div class="">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="ch_12" name="features[]" value="ch_12">
+                                                <label class="custom-control-label" for="ch_12">Parking</label>
+                                            </div>
+
+                                        </div>
+                                        <!--end ts-column-count-3-->
+
+                                    </div>
+                                    <!--end #features-checkboxes-->
+
+                                </div>
+                                <!--end Padding-->
+                            </div>
+                            <!--end more-options-collapse-->
+
+                        </div>
+                        <!--end ts-form-collapse-->
+
+                    </form>
+                    <!--end ts-form-->
+                </div>
+                <!--end ts-form__map-search-->
+                
+                <div id="ts-map-hero" class="h-100 ts-z-index__1"
+                     data-ts-map-leaflet-provider="https://api.mapbox.com/styles/v1/{id}/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibGxhbGxhbGxhbGwiLCJhIjoiY2t3bHRmdXV0MjVhajJybm9qamNpN3ltcCJ9.y_GgiSvSczc8gIfNX5eUwQ"
+                     data-ts-map-leaflet-attribution="Map data &copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors, <a href='https://creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a>, Imagery © <a href='https://www.mapbox.com/'>Mapbox</a>"
+                     data-ts-map-mapbox-access-token="pk.eyJ1IjoibGxhbGxhbGxhbGwiLCJhIjoiY2t3bHRmdXV0MjVhajJybm9qamNpN3ltcCJ9.y_GgiSvSczc8gIfNX5eUwQ"
+                     data-ts-map-zoom-position="bottomright"
+                     data-ts-map-scroll-wheel="1"
+                     data-ts-map-zoom="13"
+                     data-ts-map-center-latitude="37.5761413574219"
+                     data-ts-map-center-longitude="127.026069641113"
+                     data-ts-locale="ko-KR"
+                     data-ts-currency="KRW"
+                     data-ts-unit="m<sup>2</sup>"
+                     data-ts-display-additional-info="area_Area;floors_Floors;yrbuilt_YrBuilt"
+                     data-ts-map-mapbox-id="themestarz/cjmlrvdpk2l3k2so3ew1iua30"
+                >
+                </div>
+
+            </div>
+
+            <!-- RESULTS
+            =========================================================================================================-->
+            <div id="ts-results" class="ts-results__horizontal scrollbar-inner dragscroll">
+                <div class="ts-results-wrapper"></div>
+            </div>
+
+        </div>
+        <!--end full-screen-->
+
+    </section>
+    <!--end ts-hero-->
+
+
+</div>
+<!--end page-->
+
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+<script src="assets/js/sly.min.js"></script>
+<script src="assets/js/dragscroll.js"></script>
+<script src="assets/js/jquery.scrollbar.min.js"></script>
+<script src="assets/js/leaflet.js"></script>
+<script src="assets/js/leaflet.markercluster.js"></script>
+<script src="assets/js/custom.js"></script>
+<script src="assets/js/map-leaflet.js"></script>
+<script src="assets/js/leaflet-geoman.min.js"></script>  
+<script src="assets/js/L.VisualClick.js"></script> 
+<script src="assets/js/Control.FullScreen.js"></script> 
+<script src="assets/js/leaflet-ruler.js"></script> 
+<script src="assets/js/leaflet-measure-path.js"></script> 
+<script src="assets/js/leaflet.draw.js"></script>
+
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+    </script>  
+</body>
+</html>
