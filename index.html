@@ -39,12 +39,21 @@
         <!-- SECONDARY NAVIGATION
         =============================================================================================================-->
         <nav id="ts-secondary-navigation" class="navbar p-0">
-            <div class="container justify-content-end justify-content-sm-between">
+            <div class="container justify-content-end justify-content-sm-center ">
 
                 <!--Left Side-->
-                <div class="navbar-nav d-none d-sm-block">
+                <div class="navbar-nav mr-4  d-none d-sm-block float-right cbre-c-globalHeader__logo">
                     <!--Phone-->
-                    <span class="mr-4"><a href="#">CBRE Korea</a></span>
+                    <span class="mr-4 cbre-u-bgColor-primary3"><a href="#">
+
+                        <svg viewBox="0 0 4304 1024" width="94" height="25" aria-label="CBRE">
+                            <path d="M1784.178 783.855h-355.145v-170.808h363.6c45.661 4.228 79.908 41.011 79.908 84.558 0.423 47.353-38.474 86.249-88.363 86.249zM1429.457 225.348h376.707c41.011 6.342 73.566 41.011 73.566 82.444s-32.555 79.908-75.68 84.558h-370.365l-4.228-167.002zM1957.523 495.934c136.562-43.125 160.238-151.359 160.238-240.145 0-136.562-99.779-253.252-396.155-253.252h-554.279v1017.235h552.165c298.913 0 409.262-147.131 409.262-292.149-0.423-175.458-171.23-231.69-171.23-231.69v0z"></path>
+                            <path d="M3368.799 4.651h935.214v220.697h-675.197v164.466h608.396v222.811h-608.396v177.572h675.197v233.803h-935.214v-1019.349z"></path>
+                            <path d="M2966.302 320.476c-4.228 32.555-38.897 69.338-84.558 69.338h-365.714v-162.352h365.714c43.125 0 77.794 30.441 84.558 71.452v21.562zM2823.399 4.651h-564.849v1019.772h259.594v-411.376h285.807c82.444 2.114 145.017 65.11 145.017 145.017v266.358h255.366v-328.931c0-151.359-153.896-197.021-153.896-197.021s158.124-45.661 158.124-224.925c-2.114-223.656-199.135-268.895-385.163-268.895z"></path>
+                            <path d="M998.633 777.090c-4.228 0-355.145 6.342-476.063-4.228-194.907-17.334-264.244-156.010-264.244-268.472 0-140.789 99.779-244.796 255.366-264.244 73.566-8.456 478.6-4.228 482.827-4.228h8.456v-231.267h-467.607c-52.003 2.114-136.562 8.456-222.811 41.011-79.908 36.783-153.896 93.014-208.013 162.352-67.224 88.786-104.007 192.793-104.007 303.141 0 34.669 2.114 69.338 8.456 101.893 32.555 153.896 138.675 281.579 290.035 350.494 52.003 21.562 129.797 47.775 290.035 56.231l86.672 2.114h328.931v-244.796h-8.033z"></path>
+                        </svg>
+
+                    </a></span>
                     <!-- <span style="padding-left:300px;"></span> -->
                     <!-- <i class="fa fa-map" aria-hidden="true"></i>
                     <span class="mr-4"><a href="javascript:layerController('2d')">2D Map</a></span>
@@ -56,8 +65,21 @@
 
                 <!--  -->
                 <div class="navbar-nav flex-row d-sm-block" >
-                    <i class="fa fa-list-alt" aria-hidden="true"></i>
-                    <span class="mr-4"><a href="/listing-list-compact-sidebar.html">View List</a></span>
+                    
+                    <span class="mr-4"><a href="/listing-list-compact-sidebar.html">Sales</a></span>
+                    
+                   
+                    <span class="mr-4"><a href="/listing-list-compact-sidebar.html">Lease</a></span>
+
+                    
+                    <span class="mr-4"><a href="/listing-list-compact-sidebar.html">Office</a></span>
+
+                    
+                    <span class="mr-4"><a href="/listing-list-compact-sidebar.html">Logistics</a></span>
+
+                    <span class="mr-4"><a href="/listing-list-compact-sidebar.html">Hotel</a></span>
+
+                    <span class="mr-4"><a href="/listing-list-compact-sidebar.html">All</a></span>
                 </div>
 
                 <!--Right Side-->
@@ -69,6 +91,9 @@
                         <option value="2">KR</option>
                     </select>
                     
+                    <button class="btn btn-primary" id="resultToggleBtn" type="button" >
+                        Toggle Results
+                      </button>
                     
                 </div>
                 <!--end navbar-nav-->
@@ -76,10 +101,83 @@
             <!--end container-->
         </nav>
 
+
+
         <!--PRIMARY NAVIGATION
         =============================================================================================================-->
        
+        <nav id="ts-primary-navigation" class="navbar p-0">
+            <div class="container justify-content-end justify-content-sm-center ">
 
+                <form class="form-inline">
+                    <div class="form-group mb-2">
+                        <input type="text" class="form-control" id="keyword" name="keyword" placeholder="keyword" data-toggle="tooltip" data-placement="top" title="Property Name, Address, Buyer, Saller">
+                      <label for="startNFA" >NFA</label>
+                      
+                      <input type="number" class="form-control  text-center" placeholder="From"  id="startNFA" name="startNFA" >
+                      <input type="number" class="form-control  text-center" placeholder="To"  id="endNFA" name="endNFA" >
+
+                      <label for="startYear">YEAR</label>
+                        <input type="number" class="form-control  text-center" placeholder="From"  id="startYear" name="startYear" >
+                        <input type="number" class="form-control  text-center" placeholder="To"  id="endYear" name="endYear" >
+
+
+                        <select class="custom-select my-2" id="type" name="category" data-toggle="tooltip" data-placement="top" title="Select Properties Sector">
+                            <option value="">All</option>
+                            <option value="1">Office</option>
+                            <option value="2">Logistics</option>
+                            <option value="3">Retail</option>
+                            <option value="4">Hotel</option>
+                            
+                        </select>
+
+                        <label for="Area">Area</label>
+                        <input type="number" class="form-control  text-center" placeholder="sqm/py"  id="area" name="area" >
+                    </div>
+                   
+                  </form>
+              
+
+                
+                <!--end navbar-nav-->
+            </div>
+            <!--end container-->
+        </nav>
+
+
+        <nav id="ts-secondary-navigation" class="navbar p-0">
+            <div class="container justify-content-end justify-content-sm-center ">
+
+                <form class="form-inline">
+                    <div class="form-group mb-2">
+                        <span>
+                            <b>90</b> results
+                        </span>
+
+                        <label for="sortOption">Sort :</label>
+                        <select class="custom-select my-2" id="sortOption" name="category" data-toggle="tooltip" data-placement="top" title="Select Properties Sector">
+                            <option value="1">Highest Price</option>
+                            <option value="2">Lowest Price</option>
+                            <option value="3">Newest Contract</option>
+                            <option value="4">Oldest Contract</option>
+                            
+                        </select>
+
+                         <span>
+                            <a href="#">List</a>
+                        </span>
+
+              
+                    </div>
+                   
+                  </form>
+              
+
+                
+                <!--end navbar-nav-->
+            </div>
+            <!--end container-->
+        </nav>
     </header>
     <!--end Header-->
 
@@ -96,181 +194,7 @@
 
                 <!-- FORM
                 =====================================================================================================-->
-                <div class="ts-form__map-search ts-z-index__2">
-                    <!--Form-->
-                    <form class="ts-form">
-
-                        <!--Collapse button-->
-                        <a href=".ts-form-collapse" data-toggle="collapse" class="ts-center__vertical justify-content-between">
-                            <h5 class="mb-0">Search Filter</h5>
-                        </a>
-
-                        <!--Form-->
-                        <div class="ts-form-collapse ts-xs-hide-collapse collapse show">
-
-
-                            <!--Category-->
-                            <div class="form-group my-2 pt-2 d-flex justify-content-around" data-toggle="tooltip" data-placement="top" title="Toggle Properties Status">
-                                <a href="#" class="btn btn-light btn-mb">Lease</a>
-                                <a href="#" class="btn btn-light btn-mb">Sale</a>
-                            </div>
-
-                            <!--Keyword-->
-                            <div class="form-group my-2 pt-2">
-                                <input type="text" class="form-control" id="keyword" name="keyword" placeholder="keyword" data-toggle="tooltip" data-placement="top" title="Property Name, Address, Buyer, Saller">
-                            </div>
-
-                            <!--Sector-->
-                            <select class="custom-select my-2" id="type" name="category" data-toggle="tooltip" data-placement="top" title="Select Properties Sector">
-                                <option value="">All</option>
-                                <option value="1">Apartment</option>
-                                <option value="2">Office</option>
-                                <option value="3">Storage</option>
-                                
-                            </select>
-
-                            <!--Status
-                            <select class="custom-select my-2" id="status" name="status">
-                                <option value="">Status</option>
-                                <option value="1">Sale</option>
-                                <option value="2">Rent</option>
-                            </select>-->
-                            <!--Row-->
-                            <div class="form-row" data-toggle="tooltip" data-placement="top" title="Choose Transaction Years">
-
-                                <!--Start Year-->
-                                <div class="col-sm-6">
-                                    <div class="form-group text-center">
-                                        <label for="startYear">Start Year/Q</label>
-                                        <input type="number" class="form-control  text-center" id="startYear" name="startYear" min="1900" value="2016">
-                                        <input type="number" class="form-control  text-center" id="startQuarter" name="startQuarter" min="1" max="4" value="1">
-                                    </div>
-                                </div>
-
-                                <!--End Year-->
-                                <div class="col-sm-6">
-                                    <div class="form-group text-center">
-                                        <label for="endYear">End Year/Q</label>
-                                        <input type="number" class="form-control  text-center" id="endYear" name="endYear" max="2030" value="2021">
-                                        <input type="number" class="form-control  text-center" id="endQuarter" name="endQuarter" min="1" max="4" value="4">
-                                    </div>
-
-                                </div>
-
-                                
-                            </div>
-                            <!--end row-->
-                            
-
-                            <!--Submit button-->
-                            <div class="form-group mt-2 mb-3">
-                                <button type="submit" class="btn btn-primary w-100" id="search-btn">Search</button>
-                            </div>
-
-                            <!--More Options Button-->
-                            <a href="#more-options-collapse" class="collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="more-options-collapse">
-                                <i class="fa fa-plus-circle ts-text-color-primary mr-2 ts-visible-on-collapsed"></i>
-                                <i class="fa fa-minus-circle ts-text-color-primary mr-2 ts-visible-on-uncollapsed"></i>
-                                More Options
-                            </a>
-
-                            <!--Hidden Form-->
-                            <div class="collapse" id="more-options-collapse">
-
-                                <!--Padding-->
-                                <div class="pt-4">
-
-                                    
-
-
-                                    <!--Max Price-->
-                                    <select class="custom-select my-2" id="price" name="price">
-                                        <option value="">Max Price</option>
-                                        <option value="5000">₩ 5,000 M</option>
-                                        <option value="10000">₩ 10,000 M</option>
-                                        <option value="50000">₩ 50,000 M</option>
-                                        <option value="100000">₩ 100,000 M</option>
-                                        <option value="100000>">> ₩ 100,000 M</option>
-                                    </select>
-
-                                    <!--Max Price-->
-                                    <select class="custom-select my-2" id="price" name="price">
-                                        <option value="">Max Area(m<sup>2</sup>)</option>
-                                        <option value="5000">₩ 5,000 M</option>
-                                        <option value="10000">₩ 10,000 M</option>
-                                        <option value="50000">₩ 50,000 M</option>
-                                        <option value="100000">₩ 100,000 M</option>
-                                        <option value="100000>">> ₩ 100,000 M</option>
-                                    </select>
-                                    Distance
-                                    <!--Max Distance-->
-                                    <select class="custom-select my-2" id="price" name="price">
-                                        <option value="">Max Distance(CityHall)</option>
-                                        <option value="5000">₩ 5,000 M</option>
-                                        <option value="10000">₩ 10,000 M</option>
-                                        <option value="50000">₩ 50,000 M</option>
-                                        <option value="100000">₩ 100,000 M</option>
-                                        <option value="100000>">> ₩ 100,000 M</option>
-                                    </select>
-
-                                    <!--Max Distance-->
-                                    <select class="custom-select my-2" id="price" name="price">
-                                        <option value="">Max Distance(IC)</option>
-                                        <option value="5000">₩ 5,000 M</option>
-                                        <option value="10000">₩ 10,000 M</option>
-                                        <option value="50000">₩ 50,000 M</option>
-                                        <option value="100000">₩ 100,000 M</option>
-                                        <option value="100000>">> ₩ 100,000 M</option>
-                                    </select>
-Time
-                                    <!--Max Time-->
-                                    <select class="custom-select my-2" id="price" name="price">
-                                        <option value="">Max Time(CityHall)</option>
-                                        <option value="5000">₩ 5,000 M</option>
-                                        <option value="10000">₩ 10,000 M</option>
-                                        <option value="50000">₩ 50,000 M</option>
-                                        <option value="100000">₩ 100,000 M</option>
-                                        <option value="100000>">> ₩ 100,000 M</option>
-                                    </select>
-
-                                    <!--Max Time-->
-                                    <select class="custom-select my-2" id="price" name="price">
-                                        <option value="">Max Time(IC)</option>
-                                        <option value="5000">₩ 5,000 M</option>
-                                        <option value="10000">₩ 10,000 M</option>
-                                        <option value="50000">₩ 50,000 M</option>
-                                        <option value="100000">₩ 100,000 M</option>
-                                        <option value="100000>">> ₩ 100,000 M</option>
-                                    </select>
-
-                                    
-                                    <!--Checkboxes-->
-                                    <div id="features-checkboxes" class="w-100">
-                                        <h6 class="mb-3">Features</h6>
-
-                                        <div class="">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="ch_12" name="features[]" value="ch_12">
-                                                <label class="custom-control-label" for="ch_12">Parking</label>
-                                            </div>
-
-                                        </div>
-                                        <!--end ts-column-count-3-->
-
-                                    </div>
-                                    <!--end #features-checkboxes-->
-
-                                </div>
-                                <!--end Padding-->
-                            </div>
-                            <!--end more-options-collapse-->
-
-                        </div>
-                        <!--end ts-form-collapse-->
-
-                    </form>
-                    <!--end ts-form-->
-                </div>
+                
                 <!--end ts-form__map-search-->
                 
                 <div id="ts-map-hero" class="h-100 ts-z-index__1"
@@ -294,13 +218,16 @@ Time
 
             <!-- RESULTS
             =========================================================================================================-->
+           
             <div id="ts-results" class="ts-results__horizontal scrollbar-inner dragscroll">
-                <div class="ts-results-wrapper"></div>
+
+                <div class="ts-results-wrapper visible" id="ts-results-wrapper"></div>
             </div>
+           
 
         </div>
         <!--end full-screen-->
-
+       
     </section>
     <!--end ts-hero-->
 
@@ -330,6 +257,39 @@ Time
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
       })
-    </script>  
+
+      $("#resultToggleBtn").click(function () {
+
+        if($(".ts-full-screen").hasClass("ts-has-horizontal-results")) {
+            $(".ts-full-screen").removeClass("ts-has-horizontal-results");
+            $(".ts-full-screen").addClass("ts-has-no-result");   
+
+          
+
+        } else if ($(".ts-full-screen").hasClass("ts-has-no-result")){
+            $(".ts-full-screen").removeClass("ts-has-no-result");        
+            $(".ts-full-screen").addClass("ts-has-horizontal-results");
+
+         
+        } ;
+
+
+        if($("#ts-results").hasClass("collapse")) {
+            $("#ts-results").removeClass("collapse");
+            $("#ts-results").addClass("show");   
+
+          
+
+        } else if ($("#ts-results").hasClass("show")){
+            $("#ts-results").removeClass("show");
+            $("#ts-results").addClass("collapse");   
+
+
+         
+        } ;
+
+       
+    });   
+</script>  
 </body>
 </html>

@@ -217,7 +217,8 @@ $(document).ready(function($) {
                     //( ( loadedMarkersData[i]["price"] !== undefined && loadedMarkersData[i]["price"] > 0 ) ? '<div class="ts-marker__info">' + formatPrice(loadedMarkersData[i]["price"]) + '</div>' : "" ) +
                     //( ( loadedMarkersData[i]["marker_image"] !== undefined ) ? '<div class="ts-marker__image ts-black-gradient" style="background-image: url(' + loadedMarkersData[i]["marker_image"] + ')"></div>' : '<div class="ts-marker__image ts-black-gradient" style="background-image: url(assets/img/marker-default-img.png)"></div>' ) +
                     '<a href="#" class="ts-marker" data-ts-id="' + loadedMarkersData[i]["id"] + '" data-ts-ln="' + i + '">' +
-                    ( '<img src="assets/img/marker-icon-blue.png" />' ) +
+                    //( '<img src="assets/img/marker-green.png" />' ) +
+                    ((  loadedMarkersData[i]["id"] > 10) ? '<img src="assets/img/marker-green.png" />' : '<img src="assets/img/marker-red.png" /> ' )
                     '</a>' +
                 '</div>';
 
